@@ -66,5 +66,15 @@ namespace ToDoList.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
+
+        [HttpPost]
+        public IActionResult Done(int id)
+        {
+            var thisItem = db.Items.FirstOrDefault(x => x.ItemId == id);
+            thisItem.Done = true;
+            db.Items.Update(thisItem);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }
