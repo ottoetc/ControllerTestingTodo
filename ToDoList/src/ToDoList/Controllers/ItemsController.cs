@@ -75,6 +75,8 @@ namespace ToDoList.Controllers
             db.Items.Update(thisItem);
             db.SaveChanges();
             return RedirectToAction("Index");
+
+
         }
     }
 }
