@@ -71,8 +71,7 @@ namespace ToDoList.Controllers
         public IActionResult Done(int id)
         {
             var thisItem = db.Items.FirstOrDefault(x => x.ItemId == id);
-            thisItem.Done = true;
-            db.Items.Update(thisItem);
+            thisItem.Done = !thisItem.Done;
             db.SaveChanges();
             return RedirectToAction("Index");
 

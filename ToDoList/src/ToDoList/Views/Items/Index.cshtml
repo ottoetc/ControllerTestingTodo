@@ -13,23 +13,18 @@
         {
             <li>
                 
-                @Html.DisplayFor(modelItem =>listItem.Description) | @Html.ActionLink("Details", "Details", new { id = listItem.ItemId }) | @Html.ActionLink("Edit This", "Edit", new { id = listItem.ItemId }) | @Html.ActionLink("Delete", "Delete", new { id = listItem.ItemId }) ...... complete?
-                @*@Html.CheckBoxFor(modelItem => listItem.Done, new { onclick = "this.form.submit();"})*@
-
+                @Html.DisplayFor(modelItem =>listItem.Description) | @Html.ActionLink("Details", "Details", new { id = listItem.ItemId }) | @Html.ActionLink("Edit This", "Edit", new { id = listItem.ItemId }) | @Html.ActionLink("Delete", "Delete", new { id = listItem.ItemId })
+               
 
                 @using (@Html.BeginForm("Done", "Items", new { id = listItem.ItemId }))
                 {
                     @Html.HiddenFor(modelItem => listItem.ItemId)
 
-                    @*@Html.EditorFor(modelItem => listItem.Done)*@
-
                     @Html.CheckBoxFor(modelItem => listItem.Done, new { onclick = "this.form.submit();"})
                 }
-
+                ...... complete
             </li>
 
-
- 
         }
     </ul>
     <p>@Html.ActionLink("Add new item", "Create")</p>
