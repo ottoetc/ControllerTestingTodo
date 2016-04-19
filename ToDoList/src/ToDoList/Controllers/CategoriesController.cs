@@ -19,6 +19,12 @@ namespace ToDoList.Controllers
             return View(db.Categories.ToList());
         }
 
+        public IActionResult CategoriesDetail(int id)
+        {
+            var categoryItems = db.Items.Where(x => x.CategoryId == id).ToList();
+            return View(categoryItems);
+        }
+
         public IActionResult Name(int id)
         {
             var thisCategory = db.Categories.FirstOrDefault(x => x.CategoryId == id);
