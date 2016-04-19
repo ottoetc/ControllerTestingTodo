@@ -1,0 +1,15 @@
+﻿@{
+    ViewData["Title"] = "To Do List";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model ToDoList.Models.Category
+<h2>Create</h2>
+<hr />
+<h4>Add a new category</h4>
+@using (Html.BeginForm())
+{
+    @Html.LabelFor(model => model.Name)
+    @Html.TextBoxFor(model => model.Name)
+    <input type="submit" value="Add new category" />
+}
