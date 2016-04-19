@@ -4,17 +4,23 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
+   
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="~/css/StyleSheet.css" />
 
 </head>
 <body>
-    <div>
+    <div class="container">
         @RenderBody()
+
+        <footer>
+            <p>
+                @Html.ActionLink("LIST", "Index", "Items") |
+                @Html.ActionLink("HOME", "Index", "Home") |
+                @Html.ActionLink("CATEGORIES", "Index", "Categories")
+            </p>
+        </footer>
+        
     </div>
-    <p>
-        @Html.ActionLink("LIST", "Index", "Items") |
-        @Html.ActionLink("HOME", "Index", "Home") |
-        @Html.ActionLink("CATEGORIES", "Index", "Categories")
-    </p>
 </body>
 </html>

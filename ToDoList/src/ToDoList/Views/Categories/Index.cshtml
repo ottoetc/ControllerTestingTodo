@@ -13,9 +13,8 @@
     @foreach(var categoryList in Model)
     {
         <li>
-            @Html.DisplayFor(modelCategory => categoryList.Name) | @Html.ActionLink("Edit", "Edit", new { id = categoryList.CategoryId }) | @Html.ActionLink("Delete", "Delete", new { id = categoryList.CategoryId })
+            @Html.DisplayFor(modelCategory => categoryList.Name) | @Html.ActionLink("Edit", "Edit", new { id = categoryList.CategoryId }) | @Html.ActionLink("Delete", "Delete", new { id = categoryList.CategoryId }) | @Html.ActionLink("Tasks", "CategoriesDetail", new { id = categoryList.CategoryId })
         </li>
-        <li>@Html.ActionLink("Details", "CategoriesDetail", new { id = categoryList.CategoryId })</li>
 
     }
 </ul>
