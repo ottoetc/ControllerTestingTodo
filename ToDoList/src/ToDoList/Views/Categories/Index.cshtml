@@ -2,3 +2,19 @@
     ViewData["Title"] = "To Do List";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
+@model IEnumerable<ToDoList.Models.Category>
+
+<h2>Categories</h2>
+<hr/>
+<h4>@Html.DisplayNameFor(model => model.Name)</h4>
+
+<ul>
+    @foreach(var categoryList in Model)
+    {
+        <li>
+            @Html.DisplayFor(modelCategory => categoryList.Name)
+        </li>
+
+    }
+</ul>
