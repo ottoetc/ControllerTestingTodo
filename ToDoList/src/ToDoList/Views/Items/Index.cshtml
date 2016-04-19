@@ -18,11 +18,9 @@
 
                 @using (@Html.BeginForm("Done", "Items", new { id = listItem.ItemId }))
                 {
-                    @Html.HiddenFor(modelItem => listItem.ItemId)
-
-                    @Html.CheckBoxFor(modelItem => listItem.Done, new { onclick = "this.form.submit();"})
+                    <p>Done @Html.HiddenFor(modelItem => listItem.ItemId) @Html.CheckBoxFor(modelItem => listItem.Done, new { onclick = "this.form.submit();" })</p>
                 }
-                ...... complete
+                
             </li>
 
         }
