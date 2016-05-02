@@ -8,7 +8,7 @@ using ToDoList.Models;
 namespace ToDoList.Migrations
 {
     [DbContext(typeof(ToDoListContext))]
-    [Migration("20160420022846_Initial")]
+    [Migration("20160502164705_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -25,6 +25,8 @@ namespace ToDoList.Migrations
                     b.Property<string>("Name");
 
                     b.HasKey("CategoryId");
+
+                    b.HasAnnotation("Relational:TableName", "Categories");
                 });
 
             modelBuilder.Entity("ToDoList.Models.Item", b =>
@@ -39,6 +41,8 @@ namespace ToDoList.Migrations
                     b.Property<bool>("Done");
 
                     b.HasKey("ItemId");
+
+                    b.HasAnnotation("Relational:TableName", "Items");
                 });
 
             modelBuilder.Entity("ToDoList.Models.Item", b =>

@@ -4,17 +4,11 @@ using Microsoft.Data.Entity.Migrations;
 
 namespace ToDoList.Migrations
 {
-    public partial class MakeTableNamesPlural : Migration
+    public partial class TablesToTestDatabase : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropForeignKey(name: "FK_Item_Category_CategoryId", table: "Item");
-            migrationBuilder.RenameTable(
-                name: "Item",
-                newName: "Items");
-            migrationBuilder.RenameTable(
-                name: "Category",
-                newName: "Categories");
+            migrationBuilder.DropForeignKey(name: "FK_Item_Category_CategoryId", table: "Items");
             migrationBuilder.AddForeignKey(
                 name: "FK_Item_Category_CategoryId",
                 table: "Items",
@@ -29,17 +23,11 @@ namespace ToDoList.Migrations
             migrationBuilder.DropForeignKey(name: "FK_Item_Category_CategoryId", table: "Items");
             migrationBuilder.AddForeignKey(
                 name: "FK_Item_Category_CategoryId",
-                table: "Item",
+                table: "Items",
                 column: "CategoryId",
-                principalTable: "Category",
+                principalTable: "Categories",
                 principalColumn: "CategoryId",
                 onDelete: ReferentialAction.Restrict);
-            migrationBuilder.RenameTable(
-                name: "Items",
-                newName: "Item");
-            migrationBuilder.RenameTable(
-                name: "Categories",
-                newName: "Category");
         }
     }
 }

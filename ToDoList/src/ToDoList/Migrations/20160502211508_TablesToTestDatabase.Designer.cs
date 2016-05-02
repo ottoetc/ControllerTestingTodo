@@ -8,8 +8,8 @@ using ToDoList.Models;
 namespace ToDoList.Migrations
 {
     [DbContext(typeof(ToDoListContext))]
-    [Migration("20160426232051_First")]
-    partial class First
+    [Migration("20160502211508_TablesToTestDatabase")]
+    partial class TablesToTestDatabase
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

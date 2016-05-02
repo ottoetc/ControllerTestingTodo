@@ -4,7 +4,7 @@ using Microsoft.Data.Entity.Migrations;
 
 namespace ToDoList.Migrations
 {
-    public partial class First : Migration
+    public partial class TestDatabase : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

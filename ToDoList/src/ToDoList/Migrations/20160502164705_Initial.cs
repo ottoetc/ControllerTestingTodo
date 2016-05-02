@@ -10,7 +10,7 @@ namespace ToDoList.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Category",
+                name: "Categories",
                 columns: table => new
                 {
                     CategoryId = table.Column<int>(nullable: false)
@@ -22,7 +22,7 @@ namespace ToDoList.Migrations
                     table.PrimaryKey("PK_Category", x => x.CategoryId);
                 });
             migrationBuilder.CreateTable(
-                name: "Item",
+                name: "Items",
                 columns: table => new
                 {
                     ItemId = table.Column<int>(nullable: false)
@@ -37,7 +37,7 @@ namespace ToDoList.Migrations
                     table.ForeignKey(
                         name: "FK_Item_Category_CategoryId",
                         column: x => x.CategoryId,
-                        principalTable: "Category",
+                        principalTable: "Categories",
                         principalColumn: "CategoryId",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -45,8 +45,8 @@ namespace ToDoList.Migrations
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropTable("Item");
-            migrationBuilder.DropTable("Category");
+            migrationBuilder.DropTable("Items");
+            migrationBuilder.DropTable("Categories");
         }
     }
 }
